@@ -1,1 +1,1 @@
-# Edward_de_Bono-Six_thinking-_hats-methode
+# Edward_de_Bono-Six_thinking_hats-methode
