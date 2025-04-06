@@ -1,17 +1,19 @@
 import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HowToUse from "./components/HowToUse";
+import ThinkingHats from "./components/ThinkingHats";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
-    <>
-      <div className=""> 
-        <h1 className="text-amber-500">Hello world</h1>
-        <button className="btn">Default</button>
-      </div>
-
-      <div>
-        <h1 className=" text-amber-600"> Hi</h1>
-      </div>
-    </>
+    <div>
+      <Header/>
+      <HeroSection/>
+      <ThinkingHats/>
+      <HowToUse/>
+      <Footer/>
+    </div>
   );
 }
 
