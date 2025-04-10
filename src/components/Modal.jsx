@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 const Modal = ({ children, modalName, style }) => {
   return (

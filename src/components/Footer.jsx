@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-white py-8 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="px-4 sm:px-6 lg:px-[5rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="text-lg font-semibold text-gray-900 flex items-center">
             <img src="/top-hat.svg" alt="Six Thinking Hats Logo" className="h-6 w-auto mr-2" />
