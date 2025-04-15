@@ -1,5 +1,5 @@
+const Modal = ({ children, modalName, style, items }) => {
 
-const Modal = ({ children, modalName, style }) => {
   return (
     <div>
       <dialog id={modalName} className="modal">
@@ -9,7 +9,24 @@ const Modal = ({ children, modalName, style }) => {
               ✕
             </button>
           </form>
-          <div>{children}</div>
+          <div>
+            {children}
+            <div className=" flex flex-nowrap justify-center p-6">
+            <ul style={{ listStyleType: 'disc', textAlign: 'left' }}>
+                {items && items.length > 0 ? (
+                  items.map((item, index) => (
+                    <li key={index}>
+                      <p>{item}</p>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <p>No content</p>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

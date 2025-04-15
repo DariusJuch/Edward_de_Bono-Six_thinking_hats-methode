@@ -42,12 +42,12 @@ const HeroSection = () => {
       <div className="relative w-96 h-96 flex flex-col items-center">
         <div className="relative w-32 h-48">
           <div
-            className={`absolute w-full h-full transition-all duration-300 ${
-              isJumping ? "translate-y-[-10px]" : "translate-y-0"
-            }`}
-            style={{
-              animation: "sway 2s infinite ease-in-out",
-            }}
+            // className={`absolute w-full h-full transition-all duration-300 ${
+            //   isJumping ? "translate-y-[-10px]" : "translate-y-0"
+            // }`}
+            // style={{
+            //   animation: "sway 2s infinite ease-in-out",
+            // }}
           >
             <FaUser
               className="absolute text-gray-400"

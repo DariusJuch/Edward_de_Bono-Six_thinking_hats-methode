@@ -7,31 +7,70 @@ const hats = [
     name: "White Hat",
     description: "Facts, figures, and objective information",
     color: "#ffffff",
+    items: [
+      "Aš mokausi TECHIN – Vilniaus technologijų mokymo centre",
+      "Mano specialybė – Full Stack programuotojas",
+      "Pagrindinės programavimo kalbos tai Java ir JavaScript",
+      "Taip pat mokausi kitų programavimo kalbų ir technologijų, tokių kaip: HTML, CSS, React, SQL, Git/GitHub, Java, Spring boot",
+      "Esu kūręs įvairius projektus",
+      "Naudoju tokias priemones kaip: Visual Studio Code, GitHub, Postman, Figma, MongoDB, MySQL, IntelliJ",
+    ],
   },
   {
     name: "Red Hat",
     description: "Feelings, hunches, and intuition",
     color: "#ef4444",
+    items: [
+      "Jaučiu, kad IT ir programavimas yra mano sritis – tai įdomu ir motyvuoja",
+      "Programavimas man patinka, ypač kai matau realius rezultatus",
+      "Kartais būna sunku ir jaučiu spaudimą, ypač kai trūksta laiko ar kyla klaidų",
+      "Kai viskas pavyksta, jaučiu pasididžiavimą savimi",
+      "Nors kartais kyla abejonių, viduje tikiu, kad einu teisingu keliu",
+    ],
   },
   {
     name: "Black Hat",
     description: "Criticism and potential problems",
     color: "#111827",
+    items: [
+      "Kartais sunku suprasti sudėtingas temas iš pirmo karto",
+      "Programavimo klaidų paieška gali būti varginanti",
+      "Laiko stoka ir užduočių kiekis kelia stresą",
+      "Ne visada aišku, kaip teoriją pritaikyti praktikoje",
+      "Komandinis darbas ne visada sklandus – reikia derintis prie kitų",
+    ],
   },
   {
     name: "Yellow Hat",
     description: "Benefits and positive aspects",
     color: "#facc15",
+    items: [
+      "IT sritis labai perspektyvi – daug karjeros galimybių",
+      "Full Stack žinios leidžia kurti visapusiškus projektus",
+      "Įgūdžiai pritaikomi tiek Lietuvoje, tiek užsienyje",
+      "Kiekvienas išmoktas dalykas stiprina pasitikėjimą savimi",
+    ],
   },
   {
     name: "Green Hat",
     description: "Creativity and new ideas",
     color: "#22c55e",
+    items: [
+      "Mokytis programuoti per žaidimus",
+      "Projektai su realiais klientais",
+      "Pridėti kibernetinio saugumo mokymus",
+    ],
   },
   {
     name: "Blue Hat",
     description: "Process control and organization",
     color: "#0000FF",
+    items: [
+      "Planuoju papildyti studijas kibernetinio saugumo mokymais, kad galėčiau kurti saugias aplikacijas",
+      "Full Stack žinios ir saugumo įgūdžiai leis sukurti tvirtesnes ir patikimesnes sistemas.",
+      "Nuolat sekti naujas technologijas ir praktikuoti savo žinias.",
+      "Bendradarbiavimas su kitais specialistais padės tobulėti ir kurti geresnius sprendimus.",
+    ],
   },
 ];
 
@@ -77,7 +116,11 @@ const ThinkingHats = () => {
 
   return (
     <section ref={sectionRef} className="text-center w-[60%] mx-auto">
-      <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${isVisible ? 'animate-fly-in': 'invisible'}`}>
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${
+          isVisible ? "animate-fly-in" : "invisible"
+        }`}
+      >
         {hats.map((hat) => (
           <div
             key={hat.name}
@@ -99,6 +142,7 @@ const ThinkingHats = () => {
             <Modal
               modalName={`modal-${hat.name.replace(/\s+/g, "-")}`}
               style="p-6"
+              items={hat.items}
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {hat.name}
