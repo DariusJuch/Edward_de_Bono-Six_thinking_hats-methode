@@ -29,8 +29,8 @@ const steps = [
 
 const HowToUse = () => {
   return (
-    <section className="mt-16 text-center px-[5rem] bg-gray-100 p-6 rounded-lg shadow-md w-[90%] mx-auto">
-      <h2 className="text-3xl font-bold text-gray-900 pb-[3rem]">
+    <section className="mt-16 text-center px-[5rem] bg-[#887158] p-6 rounded-lg shadow-md w-[90%] mx-auto">
+      <h2 className="text-3xl font-bold text-[#2c2213d4] pb-[3rem]">
         How to Use the Method
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -40,15 +40,15 @@ const HowToUse = () => {
             className="flex flex-col items-center space-y-4"
           >
             <div className="flex-shrink-0">
-              <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-900 text-white">
+              <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[#2c2213d4] text-white">
                 {index + 1}
               </span>
             </div>
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-[#2c2213d4]">
                 {step.title}
               </h3>
-              <p className="text-gray-600">{step.description}</p>
+              <p className="text-[#42301b]">{step.description}</p>
             </div>
           </div>
         ))}

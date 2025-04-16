@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GiWesternHat } from "react-icons/gi";
+import { FaHatCowboy } from "react-icons/fa6";
 import Modal from "./Modal";
 
 const hats = [
@@ -124,21 +125,21 @@ const ThinkingHats = () => {
         {hats.map((hat) => (
           <div
             key={hat.name}
-            className={`bg-gray-100 p-6 rounded-lg shadow-md cursor-pointer hover:bg-gray-200 transition-colors ${
+            className={`bg-[#887158] p-6 rounded-lg shadow-md cursor-pointer hover:bg-gray-200 transition-colors ${
               rotating === hat.name ? "animate-rotateY" : ""
             }`}
             onClick={() => openModal(`modal-${hat.name.replace(/\s+/g, "-")}`)}
             onMouseEnter={() => handleMouseEnter(hat.name)}
           >
-            <GiWesternHat
+            <FaHatCowboy
               className="h-12 w-12 mx-auto mb-4"
               style={{
                 color: hat.color,
                 filter: "drop-shadow(0 0 2px rgba(0,0,0,0.3))",
               }}
             />
-            <h3 className="text-xl font-semibold text-gray-900">{hat.name}</h3>
-            <p className="text-gray-600 mt-2">{hat.description}</p>
+            <h3 className="text-xl font-semibold text-[#2c2213d4]">{hat.name}</h3>
+            <p className="text-[#42301b] mt-2">{hat.description}</p>
             <Modal
               modalName={`modal-${hat.name.replace(/\s+/g, "-")}`}
               style="p-6"
