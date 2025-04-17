@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: '/Edward_de_Bono-Six_thinking_hats-methode/'
 })
