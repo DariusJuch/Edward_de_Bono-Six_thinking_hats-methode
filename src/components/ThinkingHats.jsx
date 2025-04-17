@@ -116,7 +116,7 @@ const ThinkingHats = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="text-center w-[60%] mx-auto">
+    <section ref={sectionRef} className=" text-center w-[60%] mx-auto">
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${
           isVisible ? "animate-fly-in" : "invisible"

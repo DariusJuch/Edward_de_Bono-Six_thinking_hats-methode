@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoIosPerson } from "react-icons/io";
 import { FaHatCowboy } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const caps = [
   { name: "White Hat", color: "#ffffff" },
@@ -27,17 +28,35 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const renderAnimatedText = (text) => {
+    return text.split(" ").map((word, wordIndex) => (
+      <span key={wordIndex} className="word">
+        {word.split("").map((char, charIndex) => (
+          <span
+            key={charIndex}
+            className="letter"
+            style={{ animationDelay: `${(wordIndex * 0.3 + charIndex * 0.05)}s` }}
+          >
+            {char}
+          </span>
+        ))}
+        <span className="space"> </span> {/* Tarpas tarp žodžių */}
+      </span>
+    ));
+  };
+
   return (
-    <section className="relative h-screen  flex flex-col items-center justify-center text-center">
-      <section className="bg-[#c0ab87]  rounded-lg  shadow-black w-[60%] py-4 flex flex-col justify-center items-center absolute top-[4rem]">
-        <h1 className="text-5xl font-bold text-[#2c2213d4] mb-4">
-          Edward de Bono's Six Thinking Hats
-        </h1>
-        <p className="text-lg text-[##42301b] max-w-2xl ">
-          A powerful tool for group discussion and individual thinking involving
-          six different perspectives
-        </p>
-      </section>
+    <section className="relative h-screen flex flex-col items-center justify-center text-center">
+    <section className="bg-[#c0ab87] rounded-lg shadow-black w-[60%] py-4 flex flex-col justify-center items-center absolute top-[4rem]">
+      <h1 className="text-5xl font-bold text-[#2c2213d4] mb-4">
+        {renderAnimatedText("Edward  de Bono's Six Thinking Hats")}
+      </h1>
+      <p className="text-lg text-[#42301b] max-w-2xl">
+        {renderAnimatedText(
+          "A powerful tool for group discussion and individual thinking involving six different perspectives"
+        )}
+      </p>
+    </section>
 
       <div className="relative w-96 h-96 flex flex-col items-center">
         <div className="relative w-32 h-48">

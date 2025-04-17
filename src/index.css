@@ -52,3 +52,53 @@ body {
   opacity: 0;
   visibility: hidden;
 }
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInLetter 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInLetter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Animacija žingsniams */
+.step {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.visible .step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visible .fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

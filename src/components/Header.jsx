@@ -1,5 +1,5 @@
 import React from 'react';
-import Hat from '../../public/top-hat.svg'
+import Hat from '../assets/top-hat.svg'
  
 const Header = () => {
   return (

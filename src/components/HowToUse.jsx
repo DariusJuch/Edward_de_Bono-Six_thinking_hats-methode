@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const steps = [
   {
@@ -28,16 +28,46 @@ const steps = [
 ];
 
 const HowToUse = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Sustabdome stebėjimą po pasirodymo
+          }
+        });
+      },
+      { threshold: 0.2 } // Animacija suveikia, kai 20% komponento matoma
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="mt-16 text-center px-[5rem] bg-[#887158] p-6 rounded-lg shadow-md w-[90%] mx-auto">
-      <h2 className="text-3xl font-bold text-[#2c2213d4] pb-[3rem]">
+    <section
+      ref={sectionRef}
+      className="mt-16 text-center px-[5rem] bg-[#887158] p-6 rounded-lg shadow-md w-[90%] mx-auto"
+    >
+      <h2 className="text-3xl font-bold text-[#2c2213d4] pb-[3rem] fade-in">
         How to Use the Method
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {steps.map((step, index) => (
           <div
             key={step.title}
-            className="flex flex-col items-center space-y-4"
+            className="flex flex-col items-center space-y-4 step"
+            style={{ animationDelay: `${index * 0.2}s` }} // Vėlavimas kiekvienam žingsniui
           >
             <div className="flex-shrink-0">
               <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[#2c2213d4] text-white">
