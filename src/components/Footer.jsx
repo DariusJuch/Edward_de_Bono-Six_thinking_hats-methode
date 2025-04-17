@@ -1,4 +1,5 @@
 import React from 'react';
+import Hat from '../../public/top-hat.svg'
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="px-4 sm:px-6 lg:px-[5rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-            <img src="/top-hat.svg" alt="Six Thinking Hats Logo" className="h-6 w-auto mr-2" />
+            <img src={Hat} alt="Six Thinking Hats Logo" className="h-6 w-auto mr-2" />
             Six Thinking Hats
           </h3>
           <p className="text-gray-600 mt-2">
